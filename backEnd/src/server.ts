@@ -2,7 +2,7 @@ import express, { Express, NextFunction, Request, Response } from "express";
 import cors from "cors";
 import usuariosRoutes from './routes/usuarios'
 import autenticacaoRoutes from './routes/autenticacao'
-import emailRoutes from './routes/email';
+// import emailRoutes from './routes/email';
 import { basicAuth } from "./middlewares/basics-auth";
 
 let server: Express = express();
@@ -19,7 +19,7 @@ server.use((req: Request, res: Response, next: NextFunction) => {
 //chama a rota de usuarios
 server.use(autenticacaoRoutes);
 server.use(usuariosRoutes);//basicAuth,
-server.use(emailRoutes);//basicAuth,
+// server.use(emailRoutes);//basicAuth,
 
 //iniciar servidor
 export default {

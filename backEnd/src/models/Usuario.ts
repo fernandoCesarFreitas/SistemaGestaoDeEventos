@@ -12,14 +12,32 @@ export class Usuario extends BaseEntity {
   id: number;
 
   @Column({ length: 255 })
-  status: string
-
-  @Column({ length: 255 })
   nome: string;
+
+  @Column({ length: 11 })
+  cpf: string;
+
+  @Column({ unique: true }) // usuario unico
+  email: string;
 
   @Column({ select: false }) //nenhuma consulta ira retornar a senha
   senha: string;
 
-  @Column({ unique: true }) // usuario unico
-  email: string;
+  @Column({ length: 20 })
+  telefone: string;
+
+  @Column({ length: 255 })
+  endereco: string;
+
+  @Column({ length: 2 })
+  genero: string;
+
+  @Column({  })
+  status: boolean;
+
+  @Column({ length: 255 })
+  dataNascimento: string;
+
+  @Column({ nullable: true })
+  admin: boolean;
 }

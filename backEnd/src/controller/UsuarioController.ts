@@ -1,25 +1,31 @@
 import { Usuario } from "../models/Usuario";
 import { Request, Response } from "express";
-import { ILike } from "typeorm";
 import bcrypt from "bcrypt";
 export class UsuarioController {
   async list(req: Request, res: Response): Promise<Response> {
     let nome = req.query.nome;
 
     let usuario: Usuario[] = await Usuario.find({
-      where: { status: "Ativo" },
+      where: { status: true },
     });
     return res.status(200).json(usuario);
   }
 
   async create(req: Request, res: Response): Promise<Response> {
     let body = req.body; //pega o que vem da tela
+    console.log(body);
     let senha = await bcrypt.hash(body.senha, 10);
     let usuario: Usuario = await Usuario.create({
       nome: body.nome,
+      cpf: body.cpf,
       email: body.email,
       senha: senha,
-      status: 'Ativo',
+      telefone: body.telefone,
+      endereco: body.endereco,
+      genero: body.genero,
+      status: true,
+      dataNascimento: body.dataNascimento,
+      admin: false,// quando criar o primeiro usuario ele ja vai ser admin
     }).save(); //cria o usuario
 
     let { senha: s, ...usuarioSemSenha } = usuario;
@@ -32,8 +38,14 @@ export class UsuarioController {
     let senha = await bcrypt.hash(body.senha, 10);
     let usuario: Usuario = res.locals.usuario;
     usuario.nome = body.nome;
+    usuario.cpf= body.cpf,
     usuario.email = body.email;
     usuario.senha = senha;
+    usuario.telefone = body.telefone;
+    usuario.endereco = body.endereco;
+    usuario.genero = body.genero;
+    usuario.status = true;
+    usuario.dataNascimento = body.dataNascimento;
 
     await usuario.save();
     let { senha: s, ...usuarioSemSenha } = usuario;// o s guarda a senha que retirou do usuarioSemSenha
@@ -45,7 +57,7 @@ export class UsuarioController {
     console.log('chegou aqui')
     let body = req.body;
     let usuario: Usuario = res.locals.usuario;
-    usuario.status = 'Inativo';
+    usuario.status = false;
     await usuario.save();
     return res.status(200).json(usuario);
   }
