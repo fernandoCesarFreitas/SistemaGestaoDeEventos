@@ -5,6 +5,7 @@ import {
   BaseEntity,
   OneToMany,
 } from "typeorm";
+import { Inscricoes } from "./Inscricoes";
 
 @Entity("usuarios")
 export class Usuario extends BaseEntity {
@@ -32,7 +33,7 @@ export class Usuario extends BaseEntity {
   @Column({ length: 2 })
   genero: string;
 
-  @Column({  })
+  @Column({})
   status: boolean;
 
   @Column({ length: 255 })
@@ -40,4 +41,7 @@ export class Usuario extends BaseEntity {
 
   @Column({ nullable: true })
   admin: boolean;
+
+  @OneToMany(() => Inscricoes, (inscricoes) => inscricoes.usuario_id)
+  usuarios: Inscricoes[];
 }

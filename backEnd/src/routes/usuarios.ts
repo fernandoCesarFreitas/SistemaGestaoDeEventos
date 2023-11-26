@@ -19,7 +19,6 @@ async function validarPayload(
     endereco: yup.string().min(3).max(255).required(),
     genero: yup.string().min(1).max(2).required(),
     dataNascimento: yup.string().min(10).max(10).required(),
-
   });
   let payload = req.body;
   console.log(payload);
@@ -60,9 +59,14 @@ async function validarSeEmailExiste(
   next: NextFunction
 ): Promise<Response | void> {
   let email: string = req.body.email;
-  let id : number|undefined =  req.params.id? Number(req.params.id):undefined;
+  let id: number | undefined = req.params.id
+    ? Number(req.params.id)
+    : undefined;
 
-  let usuario: Usuario | null = await Usuario.findOneBy({ email, id: id ? Not(id): undefined });//quando o id do editar for igual o id
+  let usuario: Usuario | null = await Usuario.findOneBy({
+    email,
+    id: id ? Not(id) : undefined,
+  }); //quando o id do editar for igual o id
   if (usuario) {
     return res.status(422).json({ error: "Email ja cadastrado" });
   }
@@ -92,6 +96,6 @@ rotas.put(
 //delete
 rotas.delete("/usuarios/:id", validar, usuarioController.delete);
 
-rotas.get("/usuarioscsv",usuarioController.gerarCSVUsuarios);
+rotas.get("/usuarioscsv", usuarioController.gerarCSVUsuarios);
 
 export default rotas;
