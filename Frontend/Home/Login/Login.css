@@ -1,0 +1,35 @@
+main {
+    width: 1475px;
+    height: 800px;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-top: 50px;
+    background-color: aliceblue;
+}
+
+.login {
+    width: 500px;
+    height: 600px;
+    margin-left: 500px;
+    padding-top: 70px;
+    background-color: aqua;
+    border-style: outset;
+    border-color: black;
+    border-radius: 10px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.email {
+    margin-top: 100px;
+}
+
+.password {
+    margin-top: 30px;
+}
+
+.enter-btn {
+ margin-top: 30px;
+}

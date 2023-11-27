@@ -1,0 +1,221 @@
+header {
+    width: 1475px;
+    height: 100px;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    background-color: #8210a5;
+    color: #ffffff;
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    width: 1475px; 
+    height: 50px; 
+    margin-top: 50px; 
+    margin-left: -5px; 
+    margin-right: -10px; 
+    background-color: #af38d4; 
+    border-style: dashed;
+    border-color: #af38d4; 
+}
+
+h1 {
+    padding-top: 25px;
+    padding-left: 50px;
+}
+
+h2{
+    margin-left: 1370px;
+    margin-top: -30px;
+}
+
+.fa-fire {
+    margin-left: 10px;
+}
+
+main {
+    width: 1475px;
+    height: 630px;
+    margin-left: -10px;
+    margin-right: -10px;
+    background-color: antiquewhite;
+    margin-top: 50px;
+    padding-top: 30px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.news{
+    width: 1475px;
+    height: 800px;
+    margin-top: -50px;
+    margin-right: -10px;
+    padding-top: 10px;
+    background-color: #ffffff;
+}
+
+.slider {
+    margin: 0 auto;
+    width: 900px;
+    height: 500px;
+    overflow: hidden;
+    box-shadow: 10px 10px 50px #c3c3c3;
+}
+
+.slides {
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide {
+    width: 25%;
+    position: relative;
+    transition: 1s;
+}
+
+.slide img {
+    width: 900px;
+    height: 500px;
+    margin-left: 50px;
+}
+
+.manual-navigation {
+    position: absolute;
+    width: 800px;
+    margin-top: 120px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid #000;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .05s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
+    background-color: #000;
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -26.4%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -51.4%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -76.4%;
+}
+
+#radio5:checked ~ .first {
+    margin-left: -101.4%;
+}
+
+.navigation-auto div {
+    border: 2px solid #20aff2;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .05;
+}
+
+.navigation-auto {
+    position: absolute;
+    width: 800px;
+    margin-top: 520px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+    background-color: #000;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+    background-color: #000;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+    background-color: #000;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+    background-color: #000;
+}
+
+#radio5:checked ~ .navigation-auto .auto-btn5 {
+    background-color: #000;
+}
+
+.tops {
+    width: 1475px;
+    height: 800px;
+    margin-top: -50px;
+    margin-right: -10px;
+    background-color: aliceblue;
+    box-shadow: 10px 10px 50px #c3c3c3;
+}
+
+.top-music{
+    width: 300px;
+    height: 400px;
+    margin-left: 100px;
+    background-color: coral;
+    border-radius: 20px;
+    border-color: black;
+}
+
+.top-tech{
+    width: 300px;
+    height: 400px;
+    margin-top: -400px;
+    margin-left: 425px;
+    background-color: coral;
+    border-radius: 20px;
+    border-color: black;
+}
+
+.top-nerd{
+    width: 300px;
+    height: 400px;
+    margin-top: -400px;
+    margin-left: 750px;
+    background-color: coral;
+    border-radius: 20px;
+    border-color: black;
+}
+
+.top-cook{
+    width: 300px;
+    height: 400px;
+    margin-top: -400px;
+    margin-left: 1075px;
+    background-color: coral;
+    border-radius: 20px;
+    border-color: black;
+}
