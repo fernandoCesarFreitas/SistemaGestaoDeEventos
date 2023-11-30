@@ -1,35 +1,92 @@
 main {
-    width: 1475px;
-    height: 800px;
+    width: 1490px;
+    height: 700px;
     margin-top: -10px;
     margin-left: -10px;
     margin-right: -10px;
+    margin-bottom: -10px;
     padding-top: 50px;
-    background-color: aliceblue;
+    background-color: antiquewhite;
 }
 
 .login {
     width: 500px;
     height: 600px;
+    margin-top: -15px;
     margin-left: 500px;
     padding-top: 70px;
-    background-color: aqua;
-    border-style: outset;
-    border-color: black;
+    background-color: #fff;
+    border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 10px;
-    font-family: 'Kdam Thmor Pro', sans-serif;
+    box-shadow: 0 0 30px #c3c3c3;
     font-family: 'Poppins', sans-serif;
     text-align: center;
 }
 
-.email {
-    margin-top: 100px;
+.contendo-input {
+    position: relative;
+    width: 250px;
+    height: 60px;
+    border-bottom: 2px solid #000;
+    margin: 30px 120px;
 }
 
-.password {
+.contendo-input label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    font-weight: 600;
+    pointer-events: none;
+    transition: .5s;
+    color: #000;
+}
+
+.contendo-input input:focus~label,
+.contendo-input input:valid~label {
+    top: 25px;
+}
+
+.contendo-input input {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 400;
+    color: #000;
+    padding: 0 35px 0 5px;
+}
+
+.contendo-input .icone {
+    position: absolute;
+    right: 255px;
+    font-size: 1.2em;
+    color:#000;
+    line-height: 57px;
+}
+
+.esqueceu-senha {
+    margin-top: -15px;
+}
+
+.btn {
+    width: 200px;
+    height: 45px;
     margin-top: 30px;
-}
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #090f;
+    color: #fff;
+    }
 
-.enter-btn {
- margin-top: 30px;
-}
+    .cadastrar {
+        margin-top: 30px;
+    }
