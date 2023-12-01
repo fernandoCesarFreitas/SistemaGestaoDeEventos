@@ -2,6 +2,7 @@ import express, { Express, NextFunction, Request, Response } from "express";
 import cors from "cors";
 import usuariosRoutes from './routes/usuarios'
 import autenticacaoRoutes from './routes/autenticacao'
+import eventoRoutes from './routes/eventos';
 // import emailRoutes from './routes/email';
 import { basicAuth } from "./middlewares/basics-auth";
 
@@ -19,6 +20,7 @@ server.use((req: Request, res: Response, next: NextFunction) => {
 //chama a rota de usuarios
 server.use(autenticacaoRoutes);
 server.use(usuariosRoutes);//basicAuth,
+server.use(eventoRoutes)
 // server.use(emailRoutes);//basicAuth,
 
 //iniciar servidor

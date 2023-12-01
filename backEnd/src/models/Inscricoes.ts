@@ -7,7 +7,7 @@ import {
   JoinColumn,
 } from "typeorm";
 
-import { Eventos } from "./Eventos";
+import { Evento } from "./Eventos";
 import { Usuario } from "./Usuario";
 
 @Entity("inscricoes")
@@ -26,11 +26,11 @@ export class Inscricoes extends BaseEntity {
 
   evento_id: number;
 
-  @ManyToOne(() => Eventos, (evento) => evento.inscricoesRealizadas, {
+  @ManyToOne(() => Evento, (evento) => evento.inscricoesRealizadas, {
     eager: true,
   })
   @JoinColumn({ name: "evento_id" })
-  eventos: Eventos;
+  eventos: Evento;
 
   usuario_id: number;
 

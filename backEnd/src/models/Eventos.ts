@@ -8,7 +8,7 @@ import {
 import { Inscricoes } from "./Inscricoes";
 
 @Entity("eventos")
-export class Eventos extends BaseEntity {
+export class Evento extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -24,8 +24,8 @@ export class Eventos extends BaseEntity {
   @Column({ length: 255 })
   local: string;
 
-  @Column({ length: 255 })
-  status: string;
+  @Column()
+  status: boolean;
 
   @Column({ length: 255 })
   descricao: string;
