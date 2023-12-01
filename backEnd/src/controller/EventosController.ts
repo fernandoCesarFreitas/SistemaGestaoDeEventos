@@ -1,6 +1,5 @@
 import { Evento } from "../models/Eventos";
 import { Request, Response } from "express";
-import bcrypt from "bcrypt";
 export class EventosController {
 
   async list(req: Request, res: Response): Promise<Response> {
@@ -19,6 +18,7 @@ export class EventosController {
     let evento: Evento = await Evento.create({
       nome: body.nome,
       dataInicio: body.dataInicio,
+      dataFim: body.dataFim,
       hora: body.hora,
       local: body.local,
       status: true,
@@ -34,6 +34,7 @@ export class EventosController {
     let evento: Evento = res.locals.evento;
     evento.nome = body.nome;
     evento.dataInicio= body.dataInicio,
+    evento.dataFim= body.dataFim,
     evento.hora = body.hora;
     evento.local = body.local;
     evento.descricao = body.descricao;
@@ -48,7 +49,7 @@ export class EventosController {
 
   async delete(req: Request, res: Response): Promise<Response> {
     let body = req.body;
-    let evento: Evento = res.locals.usuario;
+    let evento: Evento = res.locals.evento;
     evento.status = false;
     await evento.save();
     return res.status(200).json(evento);
@@ -69,10 +70,10 @@ export class EventosController {
         res.status(404).json({ mensagem: "Nenhum evento encontrado." });
       }
 
-      let csv = '"ID";"Nome";"Data de Início";"status"\n';
+      let csv = '"ID";"Nome";"Data de Início";"Data de Fim";"status"\n';
 
       for (const evento of eventos) {
-        csv += `"${evento.id}";"${evento.nome}";"${evento.dataInicio}";"${evento.status}"\n`;
+        csv += `"${evento.id}";"${evento.nome}";"${evento.dataInicio}";"${evento.dataFim}";"${evento.status}"\n`;
       }
 
       // Envie o arquivo CSV como resposta

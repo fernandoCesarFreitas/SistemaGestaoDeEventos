@@ -1,7 +1,6 @@
 import { Router, Request, Response, NextFunction } from "express";
 import { Evento } from "../models/Eventos";
 import * as yup from "yup";
-import { Not } from "typeorm";
 import { EventosController } from "../controller/EventosController";
 let eventoController: EventosController = new EventosController();
 
@@ -12,11 +11,12 @@ async function validarPayload(
 ): Promise<Response | void> {
   let schema = yup.object({
     nome: yup.string().min(3).max(255).required(),
-    dataInicio: yup.string().required(),
-    hora: yup.string().min(11).max(11).required(),
-    local: yup.string().min(8).max(15).required(),
+    dataInicio: yup.string().min(3).max(255).required(),
+    dataFim: yup.string().min(3).max(255).required(),
+    hora: yup.string().min(2).max(11).required(),
+    local: yup.string().min(8).max(255).required(),
     status: yup.boolean().required(),
-    descricao: yup.string().min(1).max(2).required(),
+    descricao: yup.string().min(1).max(255).required(),
   });
   let payload = req.body;
   console.log(payload);

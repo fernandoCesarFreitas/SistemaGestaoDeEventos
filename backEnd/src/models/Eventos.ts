@@ -19,6 +19,9 @@ export class Evento extends BaseEntity {
   dataInicio: string;
 
   @Column({ length: 255 })
+  dataFim: string;
+
+  @Column({ length: 255 })
   hora: string;
 
   @Column({ length: 255 })
