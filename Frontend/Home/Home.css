@@ -1,13 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+
+}
+
 header {
     width: 1475px;
     height: 100px;
-    margin-top: -10px;
+    margin-top: -13px;
     margin-left: -10px;
     margin-right: -10px;
     background-color: #8210a5;
     color: #ffffff;
     font-size: 10px;
     font-family: 'Poppins', sans-serif;
+    
 }
 
 .header {
