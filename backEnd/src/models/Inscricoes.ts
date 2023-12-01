@@ -18,8 +18,8 @@ export class Inscricoes extends BaseEntity {
   @Column({ type: "timestamp", default: "now()" })
   dataHora: string;
 
-  @Column({ length: 255 })
-  status: string;
+  @Column()
+  status: boolean;
 
   @Column({})
   checkin: boolean;

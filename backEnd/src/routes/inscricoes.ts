@@ -1,8 +1,9 @@
+import { Inscricoes } from '../models/Inscricoes';
 import { Router, Request, Response, NextFunction } from "express";
-import { Evento } from "../models/Eventos";
+import { InscricoesController } from "../controller/InscricoesController";
 import * as yup from "yup";
-import { EventosController } from "../controller/EventosController";
-let eventoController: EventosController = new EventosController();
+import { Not } from "typeorm";
+let inscricoesController: InscricoesController = new InscricoesController();
 
 async function validarPayload(
   req: Request,
@@ -10,13 +11,8 @@ async function validarPayload(
   next: NextFunction
 ): Promise<Response | void> {
   let schema = yup.object({
-    nome: yup.string().min(3).max(255).required(),
-    dataInicio: yup.string().min(3).max(255).required(),
-    dataFim: yup.string().min(3).max(255).required(),
-    hora: yup.string().min(2).max(11).required(),
-    local: yup.string().min(8).max(255).required(),
     status: yup.boolean().required(),
-    descricao: yup.string().min(1).max(255).required(),
+    checkin: yup.boolean().required(),
   });
   let payload = req.body;
   console.log(payload);
@@ -41,12 +37,12 @@ async function validar(
 ): Promise<Response | void> {
   let id = Number(req.params.id);
 
-  let evento: Evento | null = await Evento.findOneBy({ id });
+  let inscricoes: Inscricoes | null = await Inscricoes.findOneBy({ id });
 
-  if (!evento) {
-    return res.status(422).json({ error: "evento não encontrado" });
+  if (!inscricoes) {
+    return res.status(422).json({ error: "inscrição não encontrada" });
   }
-  res.locals.evento = evento;
+  res.locals.inscricoes = inscricoes;
 
   return next();
 }
@@ -73,25 +69,25 @@ async function validar(
 
 let rotas: Router = Router();
 //listar
-rotas.get("/eventos", eventoController.list);
+rotas.get("/inscricoes", inscricoesController.list);
 //visualizar 1 usuario pelo id
-rotas.get("/eventos/:id", validar, eventoController.find);
+rotas.get("/inscricoes/:id", validar, inscricoesController.find);
 //criar
 rotas.post(
-  "/eventos",
+  "/inscricoes",
   validarPayload,
-  eventoController.create
+  inscricoesController.create
 );
 //atualizar
 rotas.put(
-  "/eventos/:id",
+  "/inscricoes/:id",
   validar,
   validarPayload,
-  eventoController.update
+  inscricoesController.update
 );
 //delete
-rotas.delete("/eventos/:id", validar, eventoController.delete);
+rotas.delete("/inscricoes/:id", validar, inscricoesController.delete);
 
-rotas.get("/eventoscsv", eventoController.gerarCSVEventos);
+rotas.get("/inscricoescsv", inscricoesController.gerarCSVInscricoes);
 
 export default rotas;

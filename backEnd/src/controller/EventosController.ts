@@ -62,7 +62,7 @@ export class EventosController {
     return res.status(200).json(evento);
   }
 
-  async gerarCSVUsuarios(req: Request, res: Response): Promise<void> {
+  async gerarCSVEventos(req: Request, res: Response): Promise<void> {
     try {
       const eventos: Evento[] = await Evento.find(); // Substitua pelo método de busca apropriado
 

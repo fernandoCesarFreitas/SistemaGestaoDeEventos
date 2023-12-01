@@ -3,6 +3,7 @@ import cors from "cors";
 import usuariosRoutes from './routes/usuarios'
 import autenticacaoRoutes from './routes/autenticacao'
 import eventoRoutes from './routes/eventos';
+import inscricoesRoutes from './routes/inscricoes';
 // import emailRoutes from './routes/email';
 import { basicAuth } from "./middlewares/basics-auth";
 
@@ -21,6 +22,7 @@ server.use((req: Request, res: Response, next: NextFunction) => {
 server.use(autenticacaoRoutes);
 server.use(usuariosRoutes);//basicAuth,
 server.use(eventoRoutes)
+server.use(inscricoesRoutes);
 // server.use(emailRoutes);//basicAuth,
 
 //iniciar servidor
