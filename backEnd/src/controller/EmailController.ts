@@ -1,5 +1,5 @@
 // import *  as nodemailer from 'nodemailer';
-// import { Clientes } from '../models/Clientes';
+// import { Usuario } from '../models/Usuario';
 // import { Request, Response } from 'express';
 // 4
 
@@ -8,7 +8,7 @@
 //     async enviarEmail(req: Request, res: Response): Promise<Response> {
 //         let body = req.body;
 
-//         let cliente: Clientes = res.locals.clientes;
+//         let cliente: Usuario = res.locals.clientes;
 //         let email = cliente.email;
 //         let titulo = body.titulo;
 //         let mensagem = body.mensagem;
@@ -35,19 +35,25 @@
 //             html: mensagem,
 //         };
 
-//         let tranporter = nodemailer.createTransport(emailConfig);
-
-//         tranporter.sendMail(mailOptions, function (error, info) {
-//             if (error) {
-//                 console.log('Erro ao enviar email: ' + error);
-//                 return res.status(404).json(error);
-//             } else {
-//                 console.log('Email enviado: ' + info.response);
-//                 return res.status(200).json({ mensagem: 'Email enviado' });
+//         let transporter = nodemailer.createTransport({
+//             host: "sandbox.smtp.mailtrap.io",
+//             port: 2525,
+//             auth: {
+//               user: "5a2e838c92cce5",
+//               pass: "********1891"
 //             }
-//         });
+//           });
+
+//           await transporter.sendMail({
+//             from: '"Gestor de eventos" <eventoscrie.ti@gmail.com>',
+//             to: `${cliente.nome}` < `${}`>,
+//             subject: "Sua inscrição foi realizada!",
+//             text: "Sua inscrição para o evento: " + evento.nome + " foi realizada com sucesso!"
+//           });
 //         return res.status(200).json({ mensagem: 'Email enviado' });
 //     }
+
+
 
 //     async emailAutomaticco(aux: Clientes, titulo: string, mensagem: string) {
 

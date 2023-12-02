@@ -15,7 +15,6 @@ async function validarPayload(
     dataFim: yup.string().min(3).max(255).required(),
     hora: yup.string().min(2).max(11).required(),
     local: yup.string().min(8).max(255).required(),
-    status: yup.boolean().required(),
     descricao: yup.string().min(1).max(255).required(),
   });
   let payload = req.body;

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Cadastro de Eventos</h1>
+      <form id="eventForm">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="startDate">Data de Início:</label>
+        <input type="date" id="startDate" name="startDate" required />
+
+        <label for="endDate">Data de Fim:</label>
+        <input type="date" id="endDate" name="endDate" required />
+
+        <label for="time">Hora:</label>
+        <input type="time" id="time" name="time" required />
+
+        <label for="location">Local:</label>
+        <input type="text" id="location" name="location" required />
+
+        <label for="description">Descrição:</label>
+        <input type="text" id="description" name="description" required />
+
+        <div class="button-container">
+          <button
+            type="button"
+            id="voltarBtn"
+            onclick="window.location.href='../PainelAdmin/index.html'"
+          >
+            Voltar
+          </button>
+          <button type="submit" id="saveBtn">Salvar</button>
+          <button type="button" id="cancelBtn">Cancelar</button>
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
