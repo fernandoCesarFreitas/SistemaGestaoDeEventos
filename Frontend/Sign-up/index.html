@@ -1,11 +1,127 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar usuario</title>
-</head>
-<body>
-    
-</body>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Criar conta</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <main>
+            <div class="cadastro">
+                <h1>Conte-nos sobre você</h1>
+                <form>
+                    <div class="contendo-input">
+                        <span class="icone"><i class="fa-solid fa-user"></i></i></span>
+                        <input type="text" required>
+                        <label>Nome completo</label>
+                    </div>
+
+                    <div class="contendo-input">
+                        <span class="icone"><i class="fa-solid fa-id-card"></i></span>
+                        <input type="text" required>
+                        <label>CPF</label>
+                    </div>
+
+                    <div class="genero">
+                        <span class="icone"><h4 class="gender"><i class="fa-solid fa-venus-mars"></i></span> Gênero</h4>
+                        <label><input type="checkbox">Masculino</label>
+                        <label><input type="checkbox">Feminino</label>
+                        <label><input type="checkbox">Outro</label>
+                    </div>
+
+                    <div class="contendo-input">
+                        <span class="icone"><i class="fa-solid fa-calendar"></i></span>
+                        <input type="date" required>
+                        <label>Data de Nascimento</label>
+                    </div>
+
+                    <div class="contendo-input">
+                        <span class="icone"><i class="fa-solid fa-envelope"></i></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+
+                    <div class="contendo-input">
+                        <span class="icone"><i class="fa-solid fa-location-dot"></i></span>
+                        <input type="text" required>
+                        <label>Endereço</label>
+                    </div>
+
+                    <div class="endereço">
+                     <div class="contendo-input">
+                        <input type="text" required>
+                        <label>Número</label>
+                     </div>
+                    </div>
+
+                    <!--Sessão de endereço-->
+                    <div class="endereço">
+                     <div class="contendo-input">
+                        <input type="text" required>
+                        <label>Bairro</label>
+                     </div>
+                    </div>
+
+                    <div class="endereço">
+                     <div class="contendo-input">
+                        <input type="text" required>
+                        <label>Cidade</label>
+                     </div>
+                    </div>
+
+                    <div class="endereço">
+                     <div class="contendo-input">
+                        <input type="text" required>
+                        <label>Estado</label>
+                     </div>
+                    </div>
+
+                    <div class="endereço">
+                     <div class="contendo-input">
+                        <input type="text" required>
+                        <label>Apto</label>
+                     </div>
+                    </div>
+                    <!--Fim da sessão de endereço-->
+
+                    <div class="contendo-input">
+                        <span class="icone"><i class="fa-solid fa-phone"></i></span>
+                        <input type="" required>
+                        <label>Telefone</label>
+                    </div>
+                    
+                    <div class="contendo-input">
+                        <span class="icone"><i class="fa-solid fa-lock"></i></span>
+                        <input type="password" required>
+                        <label>Senha</label>
+                    </div>
+
+                    <!--Início da sessão senha-->
+                    <div class="password">
+                     <div class="contendo-input">
+                        <input type="password" required>
+                        <label>Confirme a senha</label>
+                     </div>
+                    </div>
+                    <!--Fim da sessão senha-->
+                    
+                    <p class="cadastrar">Já possui uma conta? <a href="C:\Users\evely\OneDrive\Desktop\Gerenciamento de eventos\Frontend\Login_usuario\index.html" target="_self">Iniciar sessão</a></p>
+                    
+                    <button class="btn">Criar conta</button>
+
+                    <p class="termos">Ao criar uma conta, você concorda com as <a href="#">Políticas de Privacidade</a> e <a href="#">Condições de Uso.</a></p>
+                </form>
+            </div>
+        </main>
+    </body>
 </html>
