@@ -27,7 +27,7 @@ form.addEventListener('submit', async (event) => {
         let dados = await resposta.json();
         console.log(dados)
         localStorage.setItem('authorization', `${dados.type} ${dados.token}, ${dados.nome}`);
-
+        localStorage.setItem('user', JSON.stringify(dados.usuario));
         window.location.href = '../Home/index.html' //redireciona á pagina principal
     } else if (resposta.status == 401) {
         let dados = await resposta.json();
@@ -36,3 +36,7 @@ form.addEventListener('submit', async (event) => {
         alert('algo deu errado!')
     }
 });
+
+    // Obtém o nome do usuário do Local Storage
+  
+ 

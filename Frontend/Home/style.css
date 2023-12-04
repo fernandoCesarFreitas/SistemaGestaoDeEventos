@@ -1,275 +1,159 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
 header {
-    width: 102.5%;
-    height: 30%;
-    margin: -2%;
-    padding-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #8210a5;
     color: #ffffff;
-    font-size: 10px;
+    padding: 10px;
+    font-size: 18px;
     font-family: 'Poppins', sans-serif;
 }
 
-a {
-    color:#ffffff;
+header button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+}
+.header-title h1 {
+    margin: 0; /* Remover margens padrão do h1 */
 }
 
-.menu {
-    width: 102.5%; 
-    height: 10%;
-    padding-top: 1%;
-    padding-left: 5%;
-    padding-bottom: 1%;
-    margin-top: 2%;
-    background-color: #af38d4; 
-    border-style: dashed;
-    border-color: #af38d4; 
+header i {
+    display: flex;
+    align-items: center;
 }
 
-h1 {
-    padding-top: 2%;
-    padding-left: 5%;
+header i button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-h2{
-    margin-top: -3%;
-    margin-left: 85%;
-    padding-bottom: 2%;    
+#sideMenu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: #8210a5;
+    color: #ffffff;
+    transition: 0.3s;
+    overflow-x: hidden;
+    padding-top: 60px;
 }
 
-.fa-fire {
-    padding-left: 2%;
+#sideMenu a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+#sideMenu a:hover {
+    background-color: #af38d4;
 }
 
 main {
-    width: 1475px;
-    height: 630px;
-    margin-left: -10px;
-    margin-right: -10px;
     background-color: antiquewhite;
-    margin-top: 50px;
-    padding-top: 30px;
-    font-family: 'Kdam Thmor Pro', sans-serif;
-    font-family: 'Poppins', sans-serif;
+    padding: 30px 20px;
 }
 
-.news{
-    width: 1475px;
-    height: 800px;
-    margin-top: -50px;
-    margin-right: -10px;
-    padding-top: 10px;
+/* Estilo dos itens do menu */
+.menu-item {
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+}
+
+/* Adiciona um efeito hover aos itens do menu */
+.menu-item:hover {
+    background-color: #555;
+}
+
+/* Estilo do conteúdo principal, ajustado para deixar espaço para o menu */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.news {
     background-color: #ffffff;
-}
-
-.slider {
-    margin: 0 auto;
-    width: 900px;
-    height: 500px;
-    overflow: hidden;
     box-shadow: 10px 10px 50px #c3c3c3;
-}
-
-.slides {
-    width: 400%;
-    height: 500px;
-    display: flex;
-}
-
-.slides input{
-    display: none;
-}
-
-.slide {
-    width: 25%;
-    position: relative;
-    transition: 1s;
-}
-
-.slide img {
-    width: 900px;
-    height: 500px;
-    margin-left: 50px;
-}
-
-.manual-navigation {
-    position: absolute;
-    width: 800px;
-    margin-top: 30px;
-    margin-left: 30px;
-    display: flex;
-    justify-content: center;
-}
-
-.manual-btn {
-    border: 2px solid #000;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: .05s;
-}
-
-.manual-btn:not(:last-child) {
-    margin-right: 40px;
-}
-
-.manual-btn:hover {
-    background-color: #000;
-}
-
-#radio1:checked ~ .first {
-    margin-left: 0;
-}
-
-#radio2:checked ~ .first {
-    margin-left: -26.4%;
-}
-
-#radio3:checked ~ .first {
-    margin-left: -51.4%;
-}
-
-#radio4:checked ~ .first {
-    margin-left: -76.4%;
-}
-
-#radio5:checked ~ .first {
-    margin-left: -101.4%;
-}
-
-.navigation-auto div {
-    border: 2px solid #20aff2;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: .05;
-}
-
-.navigation-auto {
-    position: absolute;
-    width: 800px;
-    margin-top: 530px;
-    margin-left: 30px;
-    display: flex;
-    justify-content: center;
-}
-
-.navigation-auto div:not(:last-child) {
-    margin-right: 40px;
-}
-
-#radio1:checked ~ .navigation-auto .auto-btn1 {
-    background-color: #000;
-}
-
-#radio2:checked ~ .navigation-auto .auto-btn2 {
-    background-color: #000;
-}
-
-#radio3:checked ~ .navigation-auto .auto-btn3 {
-    background-color: #000;
-}
-
-#radio4:checked ~ .navigation-auto .auto-btn4 {
-    background-color: #000;
-}
-
-#radio5:checked ~ .navigation-auto .auto-btn5 {
-    background-color: #000;
+    margin-bottom: 20px;
+    padding: 10px;
 }
 
 .tops {
-    width: 1475px;
-    height: 800px;
-    margin-top: -50px;
-    margin-right: -10px;
-    padding-top: 20px;
-    background-color: #edeafa;
-    color: #000;
-    font-size: 15px;
-    box-shadow: 10px 10px 50px #c3c3c3;
-}
-
-.top-music{
-    width: 300px;
-    height: 400px;
-    margin-top: 50px;
-    margin-left: 100px;
-    background-color: #fff;
-    border-radius: 20px;
-    border-color: black;
-    box-shadow: 10px 10px 50px #c3c3c3;
+    width: 100%;
     text-align: center;
-}
-
-.top-tech{
-    width: 300px;
-    height: 400px;
-    margin-top: -400px;
-    margin-left: 425px;
-    background-color: #fff;
-    border-radius: 20px;
-    border-color: black;
+    background-color: aliceblue;
     box-shadow: 10px 10px 50px #c3c3c3;
-    text-align: center;
+    overflow: hidden;
+    padding: 20px;
 }
 
-.top-game{
-    width: 300px;
-    height: 400px;
-    margin-top: -400px;
-    margin-left: 750px;
-    background-color: #fff;
+.tops h1 {
+    margin-bottom: 20px;
+}
+
+.top-category {
+    float: left;
+    width: 23%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    background-color: coral;
     border-radius: 20px;
-    border-color: black;
-    box-shadow: 10px 10px 50px #c3c3c3;
-    text-align: center;
+    border: 2px solid black;
+    box-sizing: border-box;
+    height: 300px;
 }
 
-.top-cook{
-    width: 300px;
-    height: 400px;
-    margin-top: -400px;
-    margin-left: 1075px;
-    background-color: #fff;
-    border-radius: 20px;
-    border-color: black;
-    box-shadow: 10px 10px 50px #c3c3c3;
-    text-align: center;
-    
-}
-
-.top-music img{
-    width: 300px;
+.top-category img {
+    max-width: 100%;
     height: 200px;
-    border-top: 10px;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
 }
 
-.top-tech img {
-    width: 300px;
-    height: 200px;
-    border-radius: 20px;
+.clear-float {
+    clear: both;
 }
 
-.top-game img{
-    width: 300px;
-    height: 200px;
-    border-radius: 20px;
-}
-
-.top-cook img{
-    width: 300px;
-    height: 200px;
-    border-radius: 20px;
-}
-
-.know-more-btn {
-    position: absolute;
-    width: 100px;
-    height: 40px;
-    background-color: #000;
-    color:#fff;
-    border-style: dashed;
-    border-radius: 10px;
+#openMenu {
     cursor: pointer;
+    order: 1;
 }
+
+#userIcon {
+    cursor: pointer;
+    order: 2;
+    color: white; /* Define a cor do ícone como branco */
+  
+}
+#userIcon:hover {
+    color: lightgray; /* Adiciona uma cor diferente ao passar o mouse sobre o ícone (opcional) */
+}
+.header-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* ou 'space-around' ou 'flex-end' */
+}
+
+/* .header-icons i {
+    display: flex;
+} */
+

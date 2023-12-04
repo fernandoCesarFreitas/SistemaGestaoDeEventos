@@ -27,7 +27,8 @@ export class AutenticacaoController {
     // Remover a senha do usuário antes de enviá-la na resposta
     const { senha: senhaUsuario, ...userWithoutPassword } = usuario;
     console.log(userWithoutPassword);
-
+    console.log(usuario)
+    console.log(token)
     return res.status(200).json({ token, type: "Basic", usuario: userWithoutPassword });
   }
 }
