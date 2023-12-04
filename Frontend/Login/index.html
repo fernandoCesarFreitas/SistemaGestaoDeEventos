@@ -20,26 +20,27 @@
             <div class="login">
                 <h1>Iniciar sessão</h1>
 
-                <form>
+                <form id="formulario">
                     <div class="contendo-input">
                      <span class="icone"><i class="fa-solid fa-envelope"></i></span>
-                     <input type="email" required>
+                     <input type="email" id="email" required>
                      <label>Email</label>
                     </div>
                     
                     <div class="contendo-input">
                      <span class="icone"><i class="fa-solid fa-lock"></i></span>
-                     <input type="password" required>
+                     <input type="password" id="senha" required autocomplete="current-password">
                      <label>Senha</label>
                     </div>
 
                     <p class="esqueceu-senha"><a class="esqueceu-senha" href="#">Esqueceu a senha?</a></p>
 
-                    <button class="btn">Iniciar sessão</button>
+                    <button class="btn" type="submit">Iniciar sessão</button>
                 </form>
 
-                 <p class="cadastrar">Ainda não possui uma conta? <a href="Frontend\Cadastro_usuario\index.html" target="_self">Cadastre-se</a></p>
+                 <p class="cadastrar">Ainda não possui uma conta? <a href="../Sign-up/index.html" target="_self">Cadastre-se</a></p>
             </div>
         </main>
+        <script src="script.js"></script>
     </body>
 </html>

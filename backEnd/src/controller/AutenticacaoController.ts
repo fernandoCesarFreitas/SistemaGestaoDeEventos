@@ -11,7 +11,7 @@ export class AutenticacaoController {
 
     let usuario: Usuario | null = await Usuario.findOne({
       where: { email: email }, //compara todos os email com o email digitado
-      select: ["id", "email", "senha", "nome"], //busca mesmo que mande nao mostrar a nivel de db
+      select: ["id", "email", "senha", "nome", "admin"], //busca mesmo que mande nao mostrar a nivel de db
     });
     if (!usuario) {
       // se nao encontrar nenhum
