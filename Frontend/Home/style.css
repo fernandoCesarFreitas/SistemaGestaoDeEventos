@@ -1,3 +1,4 @@
+Copy code
 body {
     margin: 0;
     padding: 0;
@@ -23,6 +24,7 @@ header button {
     cursor: pointer;
     font-size: 16px;
 }
+
 .header-title h1 {
     margin: 0; /* Remover margens padrão do h1 */
 }
@@ -51,6 +53,7 @@ header i button {
     transition: 0.3s;
     overflow-x: hidden;
     padding-top: 60px;
+    z-index: 2; /* Z-index maior para sobrepor o conteúdo principal */
 }
 
 #sideMenu a {
@@ -69,6 +72,8 @@ header i button {
 main {
     background-color: antiquewhite;
     padding: 30px 20px;
+    position: relative; /* Adiciona posição relativa */
+    z-index: 1; /* Z-index menor para o conteúdo principal */
 }
 
 /* Estilo dos itens do menu */
@@ -142,18 +147,28 @@ main {
     cursor: pointer;
     order: 2;
     color: white; /* Define a cor do ícone como branco */
-  
 }
+
 #userIcon:hover {
     color: lightgray; /* Adiciona uma cor diferente ao passar o mouse sobre o ícone (opcional) */
 }
+
 .header-icons {
     display: flex;
     align-items: center;
     justify-content: space-between; /* ou 'space-around' ou 'flex-end' */
 }
 
-/* .header-icons i {
-    display: flex;
-} */
+#logoutButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-right: 10px; /* Ajuste conforme necessário */
+}
+
+#logoutButton:hover {
+    color: lightgray; /* Adiciona uma cor diferente ao passar o mouse sobre o botão (opcional) */
+}
+
 

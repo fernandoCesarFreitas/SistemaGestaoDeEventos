@@ -13,15 +13,18 @@
 <body>
 
     <header>
-        <div class="header-title">
-            <h1>Eventos.com</h1>
-            <span id="welcomeMessage"></span>
-        </div>
+        <h1>Eventos.com</h1>
         <div class="header-icons">
-            <i class="fas fa-bars fa-2x" id="openMenu"></i>
-            <a href="../Login/index.html" id="userIcon">
-                <i class="fa fa-user-circle fa-2x" aria-hidden="true" id="userIcon"></i>
-            </a>
+            <div id="left-icons">
+                <i class="fa-solid fa-bars fa-2x" id="openMenu"></i>
+            </div>
+            <div id="right-icons">
+                <a href="../Login/index.html">
+                    <i class="fa fa-user-circle fa-2x" aria-hidden="true" id="userIcon"></i>
+                </a>
+                <span id="welcomeMessage"></span>
+                <button id="logoutButton"><i class="fa fa-sign-out-alt fa-1x"></i></button>
+            </div>
         </div>
     </header>
 
@@ -30,7 +33,10 @@
         <a href="#">Link 2</a>
         <a href="#">Link 3</a>
         <a href="#">Link 4</a>
-        <button id="closeMenu">Fechar</button>
+        <a id="closeMenu">Fechar</a>
+        <div id="configButtonContainer" style="display: none;">
+            <a href="../PainelAdmin/index.html" id="configButton">Config</a>
+        </div>
     </div>
 <main>
     <div class="news">
@@ -85,9 +91,7 @@
     
     
 
-    <div id="configButtonContainer" style="display: none;">
-        <button id="configButton">Config</button>
-    </div>
+   
 </main>
 
 <footer>
@@ -118,6 +122,33 @@ if (userName) {
     // Exibe a mensagem com o nome do usuário no span
     document.getElementById("welcomeMessage").innerText = "Bem-vindo, " + userName + "!";
 }
+document.getElementById("logoutButton").addEventListener("click", function () {
+    // Limpar o localStorage ou adicionar qualquer lógica de logout necessária
+    localStorage.removeItem("user");
+    window.location.href = "../Home/index.html";
+    // Redirecionar para a página de login ou a página inicial
+    // window.location.href = "pagina_de_login.html"; // Substitua com o URL desejado
+});
+
+const storedUser = JSON.parse(localStorage.getItem('usuario'));
+console.log(storedUser);
+
+document.addEventListener('DOMContentLoaded', async function () {
+    // Aqui você pode adicionar o código para obter o usuário do localStorage
+    let user = JSON.parse(localStorage.getItem('user'));
+    console.log(user);
+    // Verificar se o usuário está logado e se é um administrador
+    if (user && user.admin) {
+      // Mostrar o botão Config
+      document.getElementById('configButtonContainer').style.display = 'block';
+  
+      // Adicionar um evento de clique ao botão Config (opcional)
+      document.getElementById('configButton').addEventListener('click', function () {
+        // Adicione aqui o código que você deseja executar quando o botão Config é clicado
+        alert('Configurações!');
+      });
+    }
+  });
 </script>
 
 <script src="script.js"></script>

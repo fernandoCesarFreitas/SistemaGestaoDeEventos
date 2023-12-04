@@ -37,6 +37,8 @@ form.addEventListener('submit', async (event) => {
     }
 });
 
+
+
     // Obtém o nome do usuário do Local Storage
   
  
