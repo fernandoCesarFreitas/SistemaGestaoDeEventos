@@ -13,15 +13,19 @@ async function validarPayload(
   let schema = yup.object({
     nome: yup.string().min(3).max(255).required(),
     email: yup.string().email().required(),
-    senha: yup.string().min(6).max(255).required(),
-    cpf: yup.string().min(11).max(11).required(),
+    senha: yup.string().min(5).max(255).required(),
+    cpf: yup.string().min(10).max(11).required(),
     telefone: yup.string().min(8).max(15).required(),
     endereco: yup.string().min(3).max(255).required(),
+    numero: yup.string().min(1).max(255).required(),
+    bairro: yup.string().min(3).max(255).required(),
+    cidade: yup.string().min(3).max(255).required(),
+    estado: yup.string().min(2).max(40).required(),
+    complemento: yup.string().min(3).max(255).nullable(),
     genero: yup.string().min(1).max(2).required(),
-    dataNascimento: yup.string().min(10).max(10).required(),
+    dataNascimento: yup.string().min(6).max(10).required(),
   });
   let payload = req.body;
-  console.log(payload);
   try {
     req.body = await schema.validate(payload, {
       abortEarly: false,

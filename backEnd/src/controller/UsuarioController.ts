@@ -13,7 +13,7 @@ export class UsuarioController {
 
   async create(req: Request, res: Response): Promise<Response> {
     let body = req.body; //pega o que vem da tela
-    console.log(body);
+    console.log("chegou aki",body);
     let senha = await bcrypt.hash(body.senha, 10);
     let usuario: Usuario = await Usuario.create({
       nome: body.nome,
@@ -22,10 +22,15 @@ export class UsuarioController {
       senha: senha,
       telefone: body.telefone,
       endereco: body.endereco,
+      numero: body.numero,
+      bairro: body.bairro,
+      cidade: body.cidade,
+      estado: body.estado,
+      complemento: body.complemento,
       genero: body.genero,
       status: true,
       dataNascimento: body.dataNascimento,
-      admin: false,// quando criar o primeiro usuario ele ja vai ser admin
+      admin: true, // quando criar o primeiro usuario ele ja vai ser admin
     }).save(); //cria o usuario
 
     let { senha: s, ...usuarioSemSenha } = usuario;
@@ -38,23 +43,27 @@ export class UsuarioController {
     let senha = await bcrypt.hash(body.senha, 10);
     let usuario: Usuario = res.locals.usuario;
     usuario.nome = body.nome;
-    usuario.cpf= body.cpf,
-    usuario.email = body.email;
+    (usuario.cpf = body.cpf), (usuario.email = body.email);
     usuario.senha = senha;
     usuario.telefone = body.telefone;
     usuario.endereco = body.endereco;
+    usuario.numero = body.numero;
+    usuario.bairro = body.bairro;
+    usuario.cidade = body.cidade;
+    usuario.estado = body.estado;
+    usuario.complemento = body.complemento;
     usuario.genero = body.genero;
     usuario.status = true;
     usuario.dataNascimento = body.dataNascimento;
 
     await usuario.save();
-    let { senha: s, ...usuarioSemSenha } = usuario;// o s guarda a senha que retirou do usuarioSemSenha
+    let { senha: s, ...usuarioSemSenha } = usuario; // o s guarda a senha que retirou do usuarioSemSenha
 
     return res.status(200).json(usuarioSemSenha);
   }
 
   async delete(req: Request, res: Response): Promise<Response> {
-    console.log('chegou aqui')
+    console.log("chegou aqui");
     let body = req.body;
     let usuario: Usuario = res.locals.usuario;
     usuario.status = false;
@@ -93,4 +102,3 @@ export class UsuarioController {
     }
   }
 }
-

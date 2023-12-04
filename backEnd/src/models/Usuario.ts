@@ -30,6 +30,21 @@ export class Usuario extends BaseEntity {
   @Column({ length: 255 })
   endereco: string;
 
+  @Column({ length: 255 })
+  numero: string;
+
+  @Column({ length: 255 })
+  bairro: string;
+
+  @Column({ length: 255 })
+  cidade: string;
+
+  @Column({ length: 255 })
+  estado: string;
+
+  @Column({ nullable: true})
+  complemento: string;
+
   @Column({ length: 2 })
   genero: string;
 
